@@ -28,6 +28,6 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_TOKEN }}
-    - run: docker build . -t "revisionsystems/openjdk:16:latest" -t "revisionsystems/openjdk:$(cat jdk16/.version)"
-    - run: docker build . -t "revisionsystems/openjdk:17:latest" -t "revisionsystems/openjdk:$(cat jdk17/.version)"
+    - run: docker build . -f jdk16/dockerfile -t "revisionsystems/openjdk:16:latest" -t "revisionsystems/openjdk:$(cat jdk16/.version)"
+    - run: docker build . -f jdk17/dockerfile -t "revisionsystems/openjdk:17:latest" -t "revisionsystems/openjdk:$(cat jdk17/.version)"
     - run: docker push "revisionsystems/openjdk"
