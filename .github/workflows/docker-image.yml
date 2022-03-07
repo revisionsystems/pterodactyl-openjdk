@@ -7,8 +7,7 @@ on:
 jobs:
 
   build:
-
-    runs-on: revisionsystems/ci-cd
+    container: revisionsystems/ci-cd:latest
 
     steps:
     - uses: actions/checkout@v2
