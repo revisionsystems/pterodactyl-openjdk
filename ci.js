@@ -2,7 +2,7 @@ const utc = new Date();
 const fs = require('fs');
 const LATEST_JDK_VERSION = 17;
 
-const versions = [16,17];
+const versions = [16,17,21];
 
 for (let i = 0; i < versions.length; i++) {
     const version = versions[i];

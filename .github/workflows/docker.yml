@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [16.x]
+        node-version: [18.x]
 
     steps:
     - uses: actions/checkout@v2
@@ -31,4 +31,5 @@ jobs:
         password: ${{ secrets.DOCKER_TOKEN }}
     - run: docker build . -f jdk16/dockerfile -t "revisionsystems/pterodactyl-openjdk:16-latest" -t "revisionsystems/pterodactyl-openjdk:$(cat jdk16/.version)"
     - run: docker build . -f jdk17/dockerfile -t "revisionsystems/pterodactyl-openjdk:17-latest" -t "revisionsystems/pterodactyl-openjdk:$(cat jdk17/.version)"
+    - run: docker build . -f jdk21/dockerfile -t "revisionsystems/pterodactyl-openjdk:17-latest" -t "revisionsystems/pterodactyl-openjdk:$(cat jdk21/.version)"
     - run: docker push -a "revisionsystems/pterodactyl-openjdk"
