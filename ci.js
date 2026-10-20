@@ -1,7 +1,7 @@
 const utc = new Date();
 const fs = require('fs');
 
-const versions = [17,21];
+const versions = [17,21,25];
 
 for (let i = 0; i < versions.length; i++) {
     const version = versions[i];
